@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+</head>
+
+<body>
+    <div class="hero is-fullheight is-dark">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-size-2 has-text-centered has-text-danger">
+                        <h1>密碼產生器</h1>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-4">
+                        <div id="password-generator">
+                            <form action="{% url 'password' %}" class="box">
+                                <div class="field">
+                                    <label class="label" for="length">密碼長度</label>
+                                    <select class="select" name="length" id="length">
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8" selected="selected">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="input-length" class="label">自定義長度</label>
+                                    <input type="number" class="input" name="input-length" id="input-length">
+                                </div>
+                                <div class="field is-horizontal">
+                                    <label for="uppercase" class="label has-text-danger">
+                                        <input type="checkbox" name="uppercase" id="uppercase">大寫
+                                    </label>
+                                    <label for="label" class="label pl-2 has-text-info">
+                                        <input type="checkbox" name="number" id="number">數字
+                                    </label>
+
+                                    <label for="special" class="label pl-2 has-text-primary">
+                                        <input type="checkbox" name="special" id="special">特殊
+                                    </label>
+                                </div>
+                                <div class="field has-text-centered">
+                                    <input type="submit" class="button is-warning" value="產生">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
